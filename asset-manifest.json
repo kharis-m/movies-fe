@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/movies-fe/static/js/main.c709de95.js",
+    "main.js": "/movies-fe/static/js/main.c3c20309.js",
     "static/media/movie_tickets.jpg": "/movies-fe/static/media/movie_tickets.8bbaed3446d8952bd14a.jpg",
     "index.html": "/movies-fe/index.html",
-    "main.c709de95.js.map": "/movies-fe/static/js/main.c709de95.js.map"
+    "main.c3c20309.js.map": "/movies-fe/static/js/main.c3c20309.js.map"
   },
   "entrypoints": [
-    "static/js/main.c709de95.js"
+    "static/js/main.c3c20309.js"
   ]
 }
