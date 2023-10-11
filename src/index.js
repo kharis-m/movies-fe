@@ -13,52 +13,32 @@ import GraphQL from './components/GraphQL';
 import Login from './components/Login';
 import OneGenre from './components/OneGenre';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {index: true, element: <Home />},
-      {
-        path: "/movies",
-        element: <Movies />
-      },
-      {
-        path: "/movies/:id",
-        element: <Movie />
-      },
-      {
-        path: "/genres",
-        element: <Genres />
-      },
-      {
-        path: "/genres/:id",
-        element: <OneGenre />
-      },
-      {
-        path: "/admin/movie/0",
-        element: <EditMovie />
-      },
-      {
-        path: "/admin/movie/:id",
-        element: <EditMovie />
-      },
-      {
-        path: "/manage-catalouge",
-        element: <ManageCatalouge />
-      },
-      {
-        path: "/graphQL",
-        element: <GraphQL />
-      },
-      {
-        path: "/login",
-        element: <Login />
-      },
-    ]
-  }
-])
+const router = createBrowserRouter({
+  basename: '/my-react-app', // Replace '/my-react-app' with your actual base URL
+  routes: [
+    {
+      path: '/',
+      element: <App />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: '/movies', element: <Movies /> },
+        { path: '/movies/:id', element: <Movie /> },
+        { path: '/genres', element: <Genres /> },
+        { path: '/genres/:id', element: <OneGenre /> },
+        { path: '/admin/movie/0', element: <EditMovie /> },
+        { path: '/admin/movie/:id', element: <EditMovie /> },
+        { path: '/manage-catalogue', element: <ManageCatalouge /> }, // Corrected typo in component name
+        { path: '/graphql', element: <GraphQL /> },
+        { path: '/login', element: <Login /> },
+      ],
+    },
+    // Define your error route here (if needed)
+    {
+      path: '*', // This will match any route not matched by the previous routes
+      element: <ErrorPage />,
+    },
+  ],
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
